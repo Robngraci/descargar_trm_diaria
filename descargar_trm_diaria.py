@@ -37,4 +37,4 @@ else:
     # Si el archivo no existe, guardar el nuevo DataFrame en el archivo CSV
     df.to_csv(archivo_csv, index=False)
 
-print("TRM guardada exitosamente.")
+print("TRM guardada exitosamente en 'trm_diaria.csv'.")
