@@ -13,7 +13,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GHZ_TOKEN }}
         submodules: true
         fetch-depth: 0
 
@@ -39,7 +39,7 @@ jobs:
         git commit -m "Update TRM diaria" || echo "No changes to commit"
         git push origin main
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GHZ_TOKEN }}
 
     - name: Show log files
       run: |
