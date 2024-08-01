@@ -12,6 +12,10 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        submodules: true
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -33,7 +37,7 @@ jobs:
         git config --global user.email 'github-actions@github.com'
         git add trm_diaria.csv
         git commit -m "Update TRM diaria" || echo "No changes to commit"
-        git push
+        git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
